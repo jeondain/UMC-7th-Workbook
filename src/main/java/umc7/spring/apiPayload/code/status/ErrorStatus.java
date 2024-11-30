@@ -17,12 +17,15 @@ public enum ErrorStatus implements BaseErrorCode {
     _FORBIDDEN(HttpStatus.FORBIDDEN, "COMMON403", "금지된 요청입니다."),
 
 
-    // 멤버 관려 에러
+    // 멤버 관련 에러
     MEMBER_NOT_FOUND(HttpStatus.BAD_REQUEST, "MEMBER4001", "사용자가 없습니다."),
     NICKNAME_NOT_EXIST(HttpStatus.BAD_REQUEST, "MEMBER4002", "닉네임은 필수 입니다."),
 
     // 음식 카테고리 에러
     FOOD_CATEGORY_NOT_FOUND(HttpStatus.BAD_REQUEST, "FOOD_CATEGORY4001", "음식 카테고리가 존재하지 않습니다."),
+
+    // 지역 에러
+    REGION_NOT_FOUND(HttpStatus.BAD_REQUEST, "REGION4001", "지역이 존재하지 않습니다."),
 
     // 예시,,,
     TEMP_EXCEPTION(HttpStatus.NOT_FOUND, "TEMP4001", "에러입니다."),
