@@ -13,6 +13,7 @@ public class StoreRequestDTO {
         String name;
         @NotNull
         String address;
+        @NotNull
         @ExistRegion
         String regionName;
     }

@@ -21,11 +21,8 @@ public class RegionExistValidator implements ConstraintValidator<ExistRegion, St
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        if (value == null) {
-            return true;
-        }
-
         boolean isValid = regionRepository.existsByName(value);
+
         if (!isValid) {
             context.disableDefaultConstraintViolation();
             context.buildConstraintViolationWithTemplate(ErrorStatus.REGION_NOT_FOUND.getMessage()).addConstraintViolation();
