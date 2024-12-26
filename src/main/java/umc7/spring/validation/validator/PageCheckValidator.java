@@ -4,7 +4,6 @@ import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import umc7.spring.apiPayload.code.status.ErrorStatus;
 import umc7.spring.validation.annotation.CheckPage;
 
 @Component
@@ -17,13 +16,12 @@ public class PageCheckValidator implements ConstraintValidator<CheckPage, Intege
 
     @Override
     public boolean isValid(Integer value, ConstraintValidatorContext context) {
-        System.out.println("Validating Page: " + value);
-
         boolean isValid = value >= 1;
 
         if (!isValid) {
             context.disableDefaultConstraintViolation();
-            context.buildConstraintViolationWithTemplate(ErrorStatus.PAGE_NOT_VALID.getMessage()).addConstraintViolation();
+//            context.buildConstraintViolationWithTemplate(ErrorStatus.PAGE_NOT_VALID.getMessage()).addConstraintViolation();
+            context.buildConstraintViolationWithTemplate("PAGE_NOT_VALID").addConstraintViolation();
         }
 
         return isValid;
