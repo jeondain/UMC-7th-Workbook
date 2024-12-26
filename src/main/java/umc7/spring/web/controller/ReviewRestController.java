@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import umc7.spring.apiPayload.ApiResponse;
 import umc7.spring.converter.ReviewConverter;
@@ -21,6 +22,7 @@ import umc7.spring.validation.annotation.ExistStore;
 import umc7.spring.web.dto.ReviewRequestDTO;
 import umc7.spring.web.dto.ReviewResponseDTO;
 
+@Validated
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/reviews")
